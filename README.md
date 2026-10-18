@@ -24,7 +24,7 @@ Puedes compartir Nébula desde el pie del catálogo o compartir una ficha desde 
 
 ## Versiones
 
-**0.5.0** incorpora fondo panorámico con difusión y transición suave, ajustes para ventanas pequeñas y pantallas anchas, compartir y actualizador integrado. Incluye filtros por tipo, género, año, país, idioma de audio y puntaje mínimo, caché persistente de imágenes y desplazamiento animado de filas.
+**0.5.0** muestra primero las plataformas y las categorías de 2026, separadas para películas y series. Incluye accesos a Netflix, Disney+, Prime Video, HBO, Apple TV+, Hulu y Paramount+ según las categorías del servicio. También incorpora fondo panorámico con difusión y transición suave, ajustes para ventanas pequeñas y pantallas anchas, compartir y actualizador integrado. Incluye filtros por tipo, género, año, país, idioma de audio y puntaje mínimo, caché persistente de imágenes y desplazamiento animado de filas.
 
 La disponibilidad de títulos, idiomas y calidades depende del servicio de origen. La aplicación no incluye archivos de películas o series.
 
