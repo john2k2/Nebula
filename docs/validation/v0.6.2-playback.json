@@ -1,0 +1,262 @@
+{
+  "mode": "verify",
+  "passed": true,
+  "errors": [],
+  "checks": [
+    "Real audio menu displays Spanish track names with no duplicated catalog languages",
+    "Real English audio track is selectable",
+    "Decoder actually seeks forward to 2 minutes and backward to 30 seconds",
+    "Timeline seeking works while paused",
+    "Visible forward and backward buttons seek 10 seconds while paused",
+    "Switching to 720p preserves the actual paused position at 5 minutes"
+  ],
+  "initial": {
+    "time": 4.201,
+    "duration": 12565.696,
+    "seekable": true,
+    "paused": false,
+    "seeking": false,
+    "width": 1902,
+    "height": 1080,
+    "frames": 103,
+    "tracks": [
+      {
+        "id": 1,
+        "label": "Track 1 - [Spanish]",
+        "language": "spa"
+      },
+      {
+        "id": 2,
+        "label": "Track 2 - [Spanish]",
+        "language": "spa"
+      },
+      {
+        "id": 3,
+        "label": "Track 3 - [English]",
+        "language": "eng"
+      }
+    ],
+    "selectedAudio": 1,
+    "audioOptions": [
+      {
+        "value": "vlc:1",
+        "label": "Español (pista 1)"
+      },
+      {
+        "value": "vlc:2",
+        "label": "Español (pista 2)"
+      },
+      {
+        "value": "vlc:3",
+        "label": "Inglés"
+      }
+    ],
+    "seekDisabled": false,
+    "diagnostics": {
+      "decoded_video_frames": 262,
+      "decoded_audio_blocks": 533,
+      "lost_frames": 0
+    }
+  },
+  "relay": {
+    "headStatus": 200,
+    "length": 2094537539,
+    "acceptRanges": "bytes",
+    "type": "video/mp4",
+    "tailStatus": 206,
+    "tailRange": "bytes 2094472003-2094537538/2094537539"
+  },
+  "forward": {
+    "time": 120,
+    "duration": 12565.696,
+    "seekable": true,
+    "paused": false,
+    "seeking": false,
+    "width": 1902,
+    "height": 1080,
+    "frames": 181,
+    "tracks": [
+      {
+        "id": 1,
+        "label": "Track 1 - [Spanish]",
+        "language": "spa"
+      },
+      {
+        "id": 2,
+        "label": "Track 2 - [Spanish]",
+        "language": "spa"
+      },
+      {
+        "id": 3,
+        "label": "Track 3 - [English]",
+        "language": "eng"
+      }
+    ],
+    "selectedAudio": 1,
+    "audioOptions": [
+      {
+        "value": "vlc:1",
+        "label": "Español (pista 1)"
+      },
+      {
+        "value": "vlc:2",
+        "label": "Español (pista 2)"
+      },
+      {
+        "value": "vlc:3",
+        "label": "Inglés"
+      }
+    ],
+    "seekDisabled": false,
+    "diagnostics": {
+      "decoded_video_frames": 426,
+      "decoded_audio_blocks": 848,
+      "lost_frames": 1
+    }
+  },
+  "backward": {
+    "time": 30,
+    "duration": 12565.696,
+    "seekable": true,
+    "paused": false,
+    "seeking": false,
+    "width": 1902,
+    "height": 1080,
+    "frames": 211,
+    "tracks": [
+      {
+        "id": 1,
+        "label": "Track 1 - [Spanish]",
+        "language": "spa"
+      },
+      {
+        "id": 2,
+        "label": "Track 2 - [Spanish]",
+        "language": "spa"
+      },
+      {
+        "id": 3,
+        "label": "Track 3 - [English]",
+        "language": "eng"
+      }
+    ],
+    "selectedAudio": 1,
+    "audioOptions": [
+      {
+        "value": "vlc:1",
+        "label": "Español (pista 1)"
+      },
+      {
+        "value": "vlc:2",
+        "label": "Español (pista 2)"
+      },
+      {
+        "value": "vlc:3",
+        "label": "Inglés"
+      }
+    ],
+    "seekDisabled": false,
+    "diagnostics": {
+      "decoded_video_frames": 506,
+      "decoded_audio_blocks": 1066,
+      "lost_frames": 4
+    }
+  },
+  "pausedScrub": {
+    "time": 300,
+    "duration": 12565.696,
+    "seekable": true,
+    "paused": true,
+    "seeking": false,
+    "width": 1902,
+    "height": 1080,
+    "frames": 219,
+    "tracks": [
+      {
+        "id": 1,
+        "label": "Track 1 - [Spanish]",
+        "language": "spa"
+      },
+      {
+        "id": 2,
+        "label": "Track 2 - [Spanish]",
+        "language": "spa"
+      },
+      {
+        "id": 3,
+        "label": "Track 3 - [English]",
+        "language": "eng"
+      }
+    ],
+    "selectedAudio": 1,
+    "audioOptions": [
+      {
+        "value": "vlc:1",
+        "label": "Español (pista 1)"
+      },
+      {
+        "value": "vlc:2",
+        "label": "Español (pista 2)"
+      },
+      {
+        "value": "vlc:3",
+        "label": "Inglés"
+      }
+    ],
+    "seekDisabled": false,
+    "diagnostics": {
+      "decoded_video_frames": 506,
+      "decoded_audio_blocks": 1066,
+      "lost_frames": 4
+    }
+  },
+  "afterQualityChange": {
+    "time": 300,
+    "duration": 12565.696,
+    "seekable": true,
+    "paused": true,
+    "seeking": false,
+    "width": 1280,
+    "height": 738,
+    "frames": 0,
+    "tracks": [
+      {
+        "id": 1,
+        "label": "Track 1 - [Spanish]",
+        "language": "spa"
+      },
+      {
+        "id": 2,
+        "label": "Track 2 - [Spanish]",
+        "language": "spa"
+      },
+      {
+        "id": 3,
+        "label": "Track 3 - [English]",
+        "language": "eng"
+      }
+    ],
+    "selectedAudio": 1,
+    "audioOptions": [
+      {
+        "value": "vlc:1",
+        "label": "Español (pista 1)"
+      },
+      {
+        "value": "vlc:2",
+        "label": "Español (pista 2)"
+      },
+      {
+        "value": "vlc:3",
+        "label": "Inglés"
+      }
+    ],
+    "seekDisabled": false,
+    "diagnostics": {
+      "decoded_video_frames": 0,
+      "decoded_audio_blocks": 0,
+      "lost_frames": 0
+    }
+  },
+  "session_preserved": true
+}

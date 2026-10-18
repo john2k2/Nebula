@@ -1,0 +1,5 @@
+Generated with the built-in image_gen tool, 2026-10-18.
+Project asset: nebula-logo.png. Windows conversions: nebula.ico and nebula-icon-64.rgba.
+Source: exec-3726a314-9c21-42d0-9719-0052ab6a7fe5.png in the conversation's generated_images folder.
+
+Use case: logo-brand. Create a polished production app icon for Nébula, a premium desktop film and series player with dark UI and crimson accent. One centered symbol only, no text or lettering, no mockup. A distinctive folded crimson ribbon forming a geometric N whose negative space subtly suggests a play triangle, with a tiny elegant four-point star at the upper right suggesting a nebula. Rich red and a subtle warm red highlight, crisp simple silhouette, premium restrained modern cinema identity, recognizable at 24px and 48px. Square composition, generous clear margin, transparent background with actual alpha, no black tile, no drop shadow, no extraneous particles. Original identity, avoid copying any existing streaming brand logo.

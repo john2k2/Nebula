@@ -1,0 +1,86 @@
+{
+  "provenance": "Original ARM64 function 0x5ca948 in isolated Unicorn; local C/C++ memory/string imports only. Not REA Evidence.",
+  "input_kind": "synthetic",
+  "image_sha256": "705b92d08e0d80839e94e0c49a5ef8a86d2a6599e8933d2e6d8758fc5bd2a04f",
+  "production_files_modified": false,
+  "service_requests": 0,
+  "jni_or_application_execution": false,
+  "entry_rva": "0x5ca948",
+  "case_count": 8,
+  "mismatch_count": 5,
+  "instruction_count": 2411,
+  "imports_called": {
+    "strstr": 25,
+    "_ZNSt6__ndk112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEPKcm": 8
+  },
+  "cases": [
+    {
+      "input": "app_id=synthetic-one&tag=synthetic-a",
+      "field": "app_id",
+      "original_arm64": "synthetic-one",
+      "current_rust_semantics": "synthetic-one",
+      "equal": true,
+      "instructions": 294
+    },
+    {
+      "input": "app_id=synthetic-one&app_id=synthetic-two&tag=synthetic-a",
+      "field": "app_id",
+      "original_arm64": "synthetic-two",
+      "current_rust_semantics": "synthetic-one",
+      "equal": false,
+      "instructions": 363
+    },
+    {
+      "input": "app_id=synthetic-one&tag=synthetic-a&tag=synthetic-b",
+      "field": "tag",
+      "original_arm64": "synthetic-b",
+      "current_rust_semantics": "synthetic-a",
+      "equal": false,
+      "instructions": 361
+    },
+    {
+      "input": "app_id=synthetic-one&token=app_id=synthetic-nested&tag=synthetic-a",
+      "field": "app_id",
+      "original_arm64": "synthetic-nested",
+      "current_rust_semantics": "synthetic-one",
+      "equal": false,
+      "instructions": 363
+    },
+    {
+      "input": "tag=synthetic-a&tag=",
+      "field": "tag",
+      "original_arm64": "",
+      "current_rust_semantics": "synthetic-a",
+      "equal": false,
+      "instructions": 361
+    },
+    {
+      "input": "app_id=synthetic-one",
+      "field": "tag",
+      "original_arm64": "",
+      "current_rust_semantics": "",
+      "equal": true,
+      "instructions": 154
+    },
+    {
+      "input": "tag=synthetic-a&not_tag=synthetic-suffix",
+      "field": "tag",
+      "original_arm64": "synthetic-suffix",
+      "current_rust_semantics": "synthetic-a",
+      "equal": false,
+      "instructions": 361
+    },
+    {
+      "input": "",
+      "field": "app_id",
+      "original_arm64": "",
+      "current_rust_semantics": "",
+      "equal": true,
+      "instructions": 154
+    }
+  ],
+  "impact_limit": "A wire difference is demonstrated only when an authorization/license repeats app_id= or tag=. No real authorization was inspected here, so this is not established as the observed HTTP400 cause.",
+  "current_source_sha256_at_review_close": "2bca12e1ccb79a42c95f2ac61808bf0d39fa3cecfd7a96ee861aa7432f508a75",
+  "current_source_uses_rfind": true,
+  "baseline_semantics_note": "The per-case current_rust_semantics field records the first-match implementation observed at the start of the audit. The parent agent subsequently applied rfind; the source hash above is the state at review close, not a hash of the rejected baseline."
+}

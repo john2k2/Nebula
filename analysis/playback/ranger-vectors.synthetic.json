@@ -1,0 +1,113 @@
+{
+  "provenance": "Independent Node implementation of recovered Ranger digest plus OpenSSL AES; cross-checked against original ARM64 synthetic oracles; no live-server validation",
+  "hashes": [
+    {
+      "text": "",
+      "seed": 0,
+      "hash_hex": "00000000000000000000000000000000"
+    },
+    {
+      "text": "foo",
+      "seed": 0,
+      "hash_hex": "6145f501578671e2877dba2be487af7e"
+    },
+    {
+      "text": "0123456789abcdef",
+      "seed": 0,
+      "hash_hex": "a7d14acf946de04bda08a7635c5bc387"
+    },
+    {
+      "text": "0123456789abcdef0123456789abcdefx",
+      "seed": 0,
+      "hash_hex": "633078132a016812e254c5a294d83aba"
+    }
+  ],
+  "vectors": [
+    {
+      "version": 11,
+      "direction": "request",
+      "communication_key": "offline-synthetic-communication-key",
+      "plaintext": "[{\"auth\":\"https://auth.example.invalid/?app_id=demo&tag=sample\",\"license\":\"app_id=demo&tag=sample&ticket=synthetic\",\"media_code\":\"fake-media-001\"}]\n",
+      "key_hex": "da4a6fac25fdadd2cfafd5e4e7b52fc9",
+      "iv_hex": "5c82c4cf6f6c269c7682a232ef66d054",
+      "ciphertext_hex": "1106bb0b6b23e0107b26e1437c7b8b3a59136e67799d0159755d25289ab12d01f07837b213ca45347910b92c660d7184a1ea03092630425e0580dc281cd3333d60acf37adbc0232ab6c6a1799e46311d14d8a8f41ab2dd9bbc7d044603d9ae2589d7b0dded5c3a1f5cf1a3a765d44b866678d2509cba928fba2bf6e73f31be4d356d0073778138caf79c4b2dcb0c74478a91d541e119ab2fb7faa6c0a77eab31",
+      "encoded": "YcpKBNP2dWWK9Gt7a3GXk-M1QeOHfctTOx5-i9LuXc36I7IyYzgtE3McGlue74CYAIA7BlS6c-dtRE6A3EbDUFBPzswQ6BbLqPpmITHCbJ5VNi25CwXOeKu0WYS7Npd-hOI6sIvokm0ozpkfTOJXmeTd5-BoGgiUGhrNHDzurM5vQcWDOdYdyrIolysX73J3hg3xcIYTLyZsZLQjgs_wbc"
+    },
+    {
+      "version": 11,
+      "direction": "response",
+      "communication_key": "offline-synthetic-communication-key",
+      "plaintext": "{\"play_infos\":[{\"status_code\":200,\"media_code\":\"fake-media-001\",\"metadata\":\"{\\\"name\\\":\\\"Synthetic sample\\\"}\",\"servers\":[{\"tag\":\"sample\",\"server_code\":\"fake-server\",\"media_url\":\"https://media.example.invalid/sample.mp4\",\"idx_url\":\"\",\"snapshot_url\":\"\",\"torrent_url\":\"\"}],\"cast_servers\":[]}]}",
+      "key_hex": "da4a6fac25fdadd2cfafd5e4e7b52fc9",
+      "iv_hex": "1a00998ba5ec22306cd65dd4284d431e",
+      "ciphertext_hex": "340c6cc9a908a91c367ee725761b71e58f5e92b1fbd2b2e37dbe307f1b52d74c9ee83cf0b84cf003f1f963caef16aab5144afbb6d1578da2d65c5c038e5dc451c097916f787155486682a1fb5777dc18b8ad8dfe65acecc2a74564f8f2de3d0f628686da422bc141fa2458240eeabd31ea65d10581f8e522e23ed856dbb2c2f5b727f88c3f0421a706ec0657b74a91018133e3a23691510331758d06550e030598e599e63b85735026b2bf6f3b9d1e574ab5fb44a8570c3c183665da2a056f6b9ddfca15f3d5a800cb5ad9e1f47956a9ade7fcb62c756ee296a152e26091970744608cbc4b437b47ee4bb30e2576df6ce1a57fe3e671491509b00d52f48747aab1e0cc11d7615478ed775fcb04357cca958c42b9fc9a46c82f178874462a3ad1bcf1c46f44ff900eb56d087d61caf552",
+      "encoded": "EjuPypMnLJ6NaGo-OmquHS0IMw3K5wX2aQd6auqlv5yI_7D6GYD6j83HSzwrtLLvtYwKqqt42pXF4t672-sYVoB4MF0doxxnTAimZvOssWhdwSsZTpDP6LOtTU2ys25USApCNMnw6V3_9tRM7GL0bIg-5cFWZkVhd2KSxqGy6rFs98hbU6cmg6QPW-IslgYWR1U2A2pJVcbuOS5Cxcd7WT2-eISKm4Ec9wi8QDGO3-OiqaqYLtobUWRNTOALWF0wfO8itaUxLj7XFqfm03-FLpsf8XSPOFKh-LtldeBJ-6OYSnyzl5EKJZHXP6d-Oq0Pdpx8dZTulJV9Pjvl0nO3Lw3RDW34SxJdK4Oay6cvabLx2YiH89gCyBz4h3JCi2wJrU3YQ518Mj_vQcm0SowvVR"
+    },
+    {
+      "version": 9,
+      "direction": "request",
+      "communication_key": "offline-synthetic-communication-key",
+      "plaintext": "https://auth.example.invalid/?app_id=demo&tag=sample",
+      "key_hex": "6c996a538f82ba732a0c1eba81837a5b",
+      "iv_hex": "b0f400e1f93edfd419b6a308a0ed8d2d",
+      "ciphertext_hex": "1579fbcc7601888deb8af71cb587935f6bd9b285ea6c18dfb2467e7192d1e5ad8bb9ee35ac4fcc763f10ceebe7c9889a47b4a8871c4f14109fcc10bec9450f25",
+      "encoded": "t4fKD3SWhnswhrooqSI14NrTPA4LQW2aPMTZoTXJHpNXGIdvwY8bO2zcDGrfyShpJKlAmuuUtWBaDWBZyVVU9c"
+    },
+    {
+      "version": 9,
+      "direction": "response",
+      "communication_key": "offline-synthetic-communication-key",
+      "plaintext": "{\"servers\":[{\"tag\":\"sample\",\"server_code\":\"fake-live\",\"media_url\":\"https://media.example.invalid/live/\"}],\"cast_servers\":[]}",
+      "key_hex": "6c996a538f82ba732a0c1eba81837a5b",
+      "iv_hex": "a2f7498ac0c1b3f58cea374e17d11824",
+      "ciphertext_hex": "c791884b493edf45bf3af56ffdb55a4d49e250f4299563aeb7bf2b7a49bf3d2e9966a3b959a5bebb06f89cf22fb78967744a7e7231d4749fb5d50b5452484663fadaf651d1d06251538e2610e18582f69b9ded12fe3c8bac5e6559d8cb70744b1bd1aa42e88a88f7ef3ecaef6171bbe21f017ef650aada4288d230854bf3411b",
+      "encoded": "uHCnl5MZs5F8krxr8Qxp1VfhVUcg-FkGqKzwIMe8Ul_TTLkHFpFZG6QdfUnrqd-fOYgZo23VO9ZvvcqVVMmCS8wp0-3J5C9JVddeYkCtRrpQfI5l82yXwtH-FO2Xo3JXC0CLcGhihUarUPwrS4CKdmzWarTcLqgBhEn6mVrDcJP"
+    },
+    {
+      "version": 11,
+      "direction": "request",
+      "communication_key": "offline-synthetic-communication-key",
+      "plaintext": "1234567890abcdef",
+      "key_hex": "da4a6fac25fdadd2cfafd5e4e7b52fc9",
+      "iv_hex": "5c82c4cf6f6c269c7682a232ef66d054",
+      "ciphertext_hex": "1e7155d4778e5c98cbe30808312e7ce1b8839e45dff7c2bfe896211ba3d1b1d2",
+      "encoded": "3ftxv3Ik492Xd6RnblHzdQh7fM4a0zi8_9SmC_UJPOn"
+    },
+    {
+      "version": 11,
+      "direction": "request",
+      "communication_key": "offline-synthetic-communication-key",
+      "plaintext": "[{\"auth\":\"áβ\",\"license\":\"fake\",\"media_code\":\"offline\"}]\n",
+      "key_hex": "da4a6fac25fdadd2cfafd5e4e7b52fc9",
+      "iv_hex": "5c82c4cf6f6c269c7682a232ef66d054",
+      "ciphertext_hex": "40fafd506732f70cfac2786ba837dd0426c83f2d26f2e7930701ff7ce6daecb8d21b073f81627c1350137379e1c7b0ac77ea19a27014f0b305ec56c612578b2f",
+      "encoded": "cUw0VCoy06D_6fmwL7aOWBQnUy5ezGI1W638akQpKX2lC6o8RF9zYvj1osfmuKBPOZATAfjVzXbtKtQCY-IXX6"
+    }
+  ],
+  "content_auth": [
+    {
+      "auth": "/asset.mp4",
+      "instance": 0,
+      "start_moment_ms": 1800000000123,
+      "signed": "/asset.mp4"
+    },
+    {
+      "auth": "/asset.mp4?token=",
+      "instance": 0,
+      "start_moment_ms": 1800000000123,
+      "signed": "/asset.mp4?token="
+    },
+    {
+      "auth": "/asset.mp4?token=fake-offline-ticket",
+      "instance": 0,
+      "start_moment_ms": 1800000000123,
+      "signed": "/asset.mp4?token=fake-offline-ticket&sign2_method=sign_o3&instance=0&start_moment=1800000000123&sign2=9a4c5a9d651eca28fefe60eb7c64263a"
+    },
+    {
+      "auth": "/asset.mp4?x=1&token=fake%2Bticket&after=retained",
+      "instance": 0,
+      "start_moment_ms": 1800000000123,
+      "signed": "/asset.mp4?x=1&token=fake%2Bticket&after=retained&sign2_method=sign_o3&instance=0&start_moment=1800000000123&sign2=6fc883d0e875f5069930ef647b5ebda0"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+Nébula para Windows — vista previa 0.6.2
+
+Esta vista previa permite explorar el catálogo real, buscar títulos y guardarlos
+en Mi lista. Incluye portada panorámica, filas horizontales por categoría,
+fichas con selector de temporada y episodios numerados con miniaturas.
+El botón Filtros combina género, año, país, audio y puntaje mínimo del catálogo.
+Las portadas y fichas muestran el puntaje cuando el servicio lo informa.
+Incluye un nuevo logo e icono de Windows y desplazamiento animado de las filas.
+La conexión y los datos locales se han reconstruido en Rust. La interfaz
+utiliza WebView2 y el vídeo se reproduce con libVLC integrado.
+La carpeta vlc debe permanecer junto a Nebula.exe; no hace falta instalar VLC.
+Para conservar el avance y la duración, se prefiere la versión MP4 cuando está
+disponible con la misma resolución y los mismos idiomas. Las pistas del mismo
+idioma se distinguen por número; no se añaden idiomas duplicados del catálogo.
+
+En este equipo se comprobó la reproducción real de Hope, con audio y avance a
+otra posición del video. Esto no garantiza que todos los títulos o formatos
+sean compatibles. No se ha medido una mejora de velocidad frente a Android.
+
+ABRIR
+
+1. Extrae la carpeta completa en un lugar donde puedas guardar archivos.
+2. Abre Nebula.exe. Conserva WebView2Loader.dll junto al ejecutable.
+3. Para consultar el catálogo hace falta conexión al servicio y que este
+   autorice la instalación. Los errores aparecen en la ventana.
+
+Necesita Windows 10 u 11 de 64 bits y Microsoft Edge WebView2 Runtime. El paquete usa
+el motor que ya esté instalado en el equipo; no instala un navegador.
+Información oficial: https://developer.microsoft.com/microsoft-edge/webview2/
+
+Si ya usabas la vista previa en esta carpeta de trabajo, el acceso
+«Abrir Nébula.cmd» conserva los datos actuales de dist/data si existen;
+en otro caso conserva analysis/integration-data.
+El paquete portable distribuido por separado utiliza su propia carpeta data.
+
+USO Y ALCANCE
+
+Inicio, Series y Películas muestran los datos que entregue el servicio, en
+filas horizontales o por género. Busca un título con Enter. El corazón guarda
+títulos en Mi lista en este equipo. Se retiró la sección TV en vivo.
+Escape cierra los detalles o el reproductor.
+
+Las portadas, fondos y miniaturas se guardan en data/image-cache y se reutilizan
+al volver a abrir el programa. La caché limpia imágenes antiguas (30 días) y
+mantiene un presupuesto de 256 MiB y 2.000 archivos. Se descarga sólo el arte
+solicitado por la interfaz; no guarda películas ni episodios. El catálogo y
+la reproducción siguen necesitando conexión al servicio.
+
+El reproductor incluye pausa, saltos de diez segundos, barra de avance,
+volumen, silencio, calidad del vídeo, pantalla completa y bloqueo de controles.
+Calidad y Chromecast están juntos en la barra del reproductor. Las calidades
+disponibles se consultan al servidor; cambiar de calidad conserva la posición.
+En series permite elegir episodio, ir al anterior/siguiente y continuar
+automáticamente. Espacio pausa; las flechas buscan; M silencia; F alterna
+pantalla completa; B bloquea o desbloquea. Escape primero cierra un panel o
+desbloquea los controles, y después permite salir del reproductor. El botón
+Ayuda o la tecla H muestran los atajos y gestos. La aplicación recuerda dónde
+dejaste cada película o episodio; al finalizar retira esa posición guardada.
+
+Calidad e idioma muestran únicamente las opciones autorizadas para el título.
+Cambiar de calidad conserva la posición y la pausa. Audio y subtítulos abre
+el menú flotante: VLC enumera las pistas del archivo y permite cambiar entre
+ellas. También se conservan los idiomas autorizados que necesitan otra fuente.
+Se comprobó El Hombre Araña 1 con sus pistas reales de español e inglés.
+Hope reproduce, pero su archivo autorizado para Windows sólo contiene coreano.
+
+Subtítulos ofrece las pistas disponibles del vídeo y las SRT de la película,
+con tres tamaños y estilos blanco, amarillo o blanco sobre fondo negro.
+Las preferencias se guardan en este equipo. Compartir título copia la ficha
+como texto; Informar un problema permite guardar un informe local en la
+carpeta reports de los datos de la aplicación. Ese informe no se envía al
+soporte del servicio.
+
+Chromecast abre su selector de televisores dentro de Nébula y conserva la
+calidad y el idioma seleccionados. Elige un televisor de la misma red para
+iniciar el envío. Sus controles permiten pausar, continuar y cambiar de pista.
+
+La sesión guardada se reutiliza al volver a abrir el programa. Si el servicio
+indica que ha caducado, usa Reconectar. Se conservan tus favoritos. Abrir otra
+copia de Nébula utiliza la ventana existente para evitar sesiones simultáneas.
+También reconoce una ventana anterior de Xuper durante la transición de nombre.
+
+Si una película o un episodio no se puede reproducir, la ventana muestra el motivo
+disponible. La presencia de una portada o una ficha no confirma que el video
+esté disponible en Windows.
+
+La carpeta data se crea al utilizar el programa y guarda sesión, favoritos y
+preferencias del motor web. No la compartas. El paquete inicial no contiene
+sesiones, cuentas, catálogos de ejemplo ni credenciales de otro dispositivo.
+
+COMPROBACIONES OPCIONALES
+
+Nebula.exe --offline-ui
+  Abre la interfaz en modo local, sin consultar el catálogo remoto.
+
+Nebula.exe --smoke-test
+  Comprueba ventana, recursos y puente interno de forma oculta y sin consultar
+  el catálogo. Guarda data/smoke-report.json y termina.
+
+Nebula.exe --probe informe.json
+  Comprueba conexión, categorías y la primera página del catálogo real. Guarda
+  únicamente cantidades, códigos y tiempos; no incluye títulos ni credenciales.
+
+XUPER_DATA_DIR permite elegir una carpeta de datos. No copies la misma sesión
+para activar simultáneamente varias versiones. Las pruebas de interfaz deben
+usar la ventana existente o el modo local sin conexión.
+
+COMPONENTES
+
+Las licencias y avisos de terceros están en licenses y THIRD-PARTY-NOTICES.txt.
+El motor VLC y sus módulos se entregan sin modificaciones, con su licencia
+en vlc/COPYING.txt. Fuente VLC 3.0.24:
+https://download.videolan.org/pub/videolan/vlc/3.0.24/vlc-3.0.24.tar.xz
+Nébula es el nombre de esta adaptación de escritorio. La compatibilidad con el
+servicio se reconstruyó a partir del APK Xuper Mobile NF aportado para este
+trabajo. Este paquete no incluye el APK, el descompilado ni el entorno Rust.
+
+ACTUALIZACIONES Y COMPARTIR
+
+Al abrir, Nébula comprueba periódicamente las versiones públicas en GitHub.
+También puedes usar Buscar actualizaciones al pie del catálogo. El paquete se
+descarga y verifica antes de reiniciar, conservando la carpeta data.
+La versión anterior queda guardada en data/updates para recuperación.
+Compartir copia la ficha y el enlace público de descarga, sin enlaces de video.
+https://github.com/john2k2/Nebula/releases/latest
+
+
+CHROMECAST INTEGRADO
+
+En una ficha o en el reproductor pulsa Enviar al televisor y elige un
+Chromecast de la lista. El selector y el control funcionan dentro de Nébula;
+no hace falta abrir Chrome. Mantén la PC encendida y en la misma red del TV.
+El control permite pausar, continuar, adelantar y elegir las pistas de audio
+que ofrezca el título. Calidad del envío e Idioma de la fuente muestran las
+variantes del servicio. Aplicar calidad e idioma reinicia el envío conservando
+la posición. Audio del televisor muestra las pistas detectadas en ese archivo;
+si solo existe una opción, el selector queda desactivado.
+La compatibilidad final depende del receptor y formato.
+

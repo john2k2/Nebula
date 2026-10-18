@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nébula · Escritorio</title>
+  <link rel="stylesheet" href="/app.css">
+  <link rel="stylesheet" href="/player-controls.css">
+  <link rel="stylesheet" href="/cinema.css">
+  <script defer src="/vendor/hls-1.7.3.min.js"></script>
+  <script defer src="/player-controls.js"></script>
+  <script defer src="/native-video.js"></script>
+  <script defer src="/release-ui.js"></script>
+  <script defer src="/cast-ui.js"></script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-catalog" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-live" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="m8 2 4 4 4-4M8 22h8"/><path d="m10 10 5 3-5 3z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 13 8-13 8z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 11.5-2L20 8M4 16l2.5 3A7 7 0 0 0 18 17"/></symbol>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4m-4 8h4m10-8h4m-4 8h4M7 12h10"/></symbol>
+    <symbol id="i-connection" viewBox="0 0 24 24"><path d="M3 8a14 14 0 0 1 18 0M6 12a9 9 0 0 1 12 0M9 16a4.5 4.5 0 0 1 6 0"/><circle cx="12" cy="20" r=".75"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v.1"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 0 1 6 0c0 2-3 2-3 5m0 4v.1"/></symbol>
+    <symbol id="i-cast" viewBox="0 0 24 24"><path d="M3 7V4h18v15h-7M3 12a7 7 0 0 1 7 7M3 16a3 3 0 0 1 3 3"/><circle cx="3" cy="19" r=".5"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke-width="4"/></symbol>
+    <symbol id="i-rewind" viewBox="0 0 32 32"><path d="M8 8.5a11 11 0 1 1-2.5 12M8 3v6H2"/></symbol>
+    <symbol id="i-forward" viewBox="0 0 32 32"><path d="M24 8.5a11 11 0 1 0 2.5 12M24 3v6h6"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3zM16 8a6 6 0 0 1 0 8M19 5a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-muted" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3zM16 9l5 6m0-6-5 6"/></symbol>
+    <symbol id="i-quality" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 9v6m4-6v6m-4-3h4m4-3v6h2a3 3 0 0 0 0-6z"/></symbol>
+    <symbol id="i-subtitles" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M5 11h5m4 0h5M5 15h9m3 0h2"/></symbol>
+    <symbol id="i-episodes" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.1M3 12h.1M3 18h.1"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4M12 14v3"/></symbol>
+    <symbol id="i-unlock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 7.5-2M12 14v3"/></symbol>
+    <symbol id="i-fullscreen" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m8 0h5v-5"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m9 10 6-4M9 14l6 4"/></symbol>
+    <symbol id="i-report" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-2 2V11.5a9.5 9.5 0 0 1 19 0Z"/><path d="M12 6v6m0 4v.1"/></symbol>
+    <symbol id="i-previous" viewBox="0 0 24 24"><path d="M5 5v14m14-14L8 12l11 7z"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M19 5v14M5 5l11 7-11 7z"/></symbol>
+  </svg>
+  <header class="topbar">
+    <div class="brand" aria-label="Nébula"><img src="/logo.png" alt="" width="40" height="40"><span>NÉBULA</span></div>
+    <nav aria-label="Navegación principal">
+      <button class="nav-item active" data-view="vod" aria-current="page"><svg><use href="#i-catalog"/></svg><span>Inicio</span></button>
+      <button class="nav-item" data-view="series"><span>Series</span></button>
+      <button class="nav-item" data-view="movies"><span>Películas</span></button>
+      <button class="nav-item nav-search" data-view="search"><svg><use href="#i-search"/></svg><span>Buscar</span></button>
+      <button class="nav-item" data-view="favorites"><svg><use href="#i-heart"/></svg><span>Mi lista</span><span id="favorite-count" class="nav-count" hidden></span></button>
+    </nav>
+    <div class="topbar-actions">
+      <form id="search-form" class="search-box" role="search">
+        <svg><use href="#i-search"/></svg><input id="search-input" type="search" placeholder="Títulos, películas, series" autocomplete="off" maxlength="200" aria-label="Buscar contenido"><button type="submit" aria-label="Buscar">↵</button>
+      </form>
+      <button id="filters-open" class="filter-toggle" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18L14 13v6l-4 2v-8z"/></svg><span>Filtros</span><span id="filters-count" hidden></span></button>
+      <div id="connection" class="connection checking" title="Comprobando conexión"><span class="status-dot"></span><span id="connection-label">Comprobando conexión</span></div>
+      <button id="reconnect" class="connection-retry" hidden>Reconectar</button>
+      <div class="profile-mark" aria-hidden="true"><img src="/logo.png" alt="" width="28" height="28"></div>
+    </div>
+  </header>
+  <div class="workspace">
+    <section id="featured" class="featured" aria-label="Título destacado" hidden></section>
+    <main>
+      <div class="browse-heading"><div class="page-heading"><div><p id="eyebrow" class="eyebrow">EXPLORA NÉBULA</p><h1 id="page-title">Encuentra tu próxima historia</h1><p id="page-subtitle" class="subtitle">Películas, series y mucho más.</p></div></div><div class="browse-actions"><span id="item-count" class="result-count"></span><button id="refresh" class="icon-button" title="Actualizar contenido" aria-label="Actualizar contenido"><svg><use href="#i-refresh"/></svg></button></div></div>
+      <div id="categories" class="categories" aria-label="Categorías"></div>
+      <div id="category-error" class="inline-note" hidden></div>
+      <div id="result-notice" class="inline-note" role="status" hidden></div>
+      <div id="active-filters" class="active-filters" aria-label="Filtros aplicados" hidden></div>
+      <div id="platforms" class="platforms" hidden></div>
+      <section id="results" aria-label="Contenido" aria-live="polite" aria-busy="true"></section>
+      <div class="pagination"><button id="load-more" class="button secondary" hidden>Cargar más</button></div>
+      <footer class="app-footer"><span class="footer-brand">NÉBULA</span><span id="app-version" class="version">Nébula para Windows</span></footer>
+    </main>
+  </div>
+  <dialog id="filters-dialog" class="filters-dialog" aria-labelledby="filters-title">
+    <form id="filters-form">
+      <header class="filters-heading"><div><p class="eyebrow">ENCUENTRA TU PRÓXIMA HISTORIA</p><h2 id="filters-title">Explora a tu manera</h2></div><button id="filters-close" class="icon-button" type="button" aria-label="Cerrar filtros"><svg><use href="#i-close"/></svg></button></header>
+      <p class="filters-description">Combina género, año, país, audio y puntaje para explorar el catálogo.</p>
+      <div id="filters-fields" class="filters-fields"></div>
+      <p id="filters-message" class="filters-message" role="status"></p>
+      <footer class="filters-actions"><button id="filters-reset" class="button secondary" type="button">Limpiar</button><button id="filters-apply" class="button primary" type="submit">Ver resultados</button></footer>
+    </form>
+  </dialog>
+  <dialog id="details-dialog" class="details-dialog" aria-labelledby="details-title"><button id="details-close" class="icon-button dialog-close" aria-label="Cerrar detalles"><svg><use href="#i-close"/></svg></button><div id="details-content"></div></dialog>
+  <dialog id="player-dialog" class="player-dialog" aria-labelledby="player-title">
+    <div id="player-surface" class="player-surface">
+    <div class="player-heading"><button id="player-close" class="icon-button player-return" aria-label="Volver al catálogo"><svg viewBox="0 0 24 24"><path d="M20 12H4m7-7-7 7 7 7"/></svg></button><div class="player-now"><span class="eyebrow">ESTÁS VIENDO</span><h2 id="player-title"></h2></div><div class="player-heading-actions"><button id="player-help" class="icon-button" aria-label="Atajos y gestos" title="Atajos y gestos (H)" hidden><svg><use href="#i-help"/></svg></button><button id="player-share" class="icon-button" aria-label="Compartir título" title="Compartir título" hidden><svg><use href="#i-share"/></svg></button><button id="player-report" class="icon-button" aria-label="Informar un problema" title="Informar un problema" hidden><svg><use href="#i-report"/></svg></button></div></div>
+    <div class="video-wrap"><video id="video" controls playsinline preload="metadata" aria-label="Vídeo"></video><div id="player-gesture-feedback" class="player-gesture-feedback" role="status" hidden></div><div id="player-lock-notice" class="player-lock-notice" hidden>Controles bloqueados · Pulsa B para desbloquear</div></div>
+    <div class="player-bottom">
+    <div id="player-controls" class="player-controls" hidden></div>
+    <div id="player-settings" class="player-settings" hidden><label id="player-quality-field" for="player-quality"><span>Calidad</span><select id="player-quality" aria-label="Calidad del video"></select></label><label id="player-audio-field" for="player-audio"><span>Audio</span><select id="player-audio" aria-label="Idioma de audio"></select></label></div>
+    <p id="player-settings-note" class="player-settings-note" role="status" hidden></p>
+    <div class="player-footer"><span id="player-message" role="status">Preparando reproducción…</span><div class="player-actions"><button id="player-cast" class="button secondary" title="Enviar con Chromecast"><svg><use href="#i-cast"/></svg>Enviar al televisor</button><button id="player-retry" class="button secondary" hidden>Reintentar</button></div></div>
+    </div>
+    </div>
+  </dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

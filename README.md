@@ -24,6 +24,10 @@ Puedes compartir Nébula desde el pie del catálogo o compartir una ficha desde 
 
 ## Versiones
 
+**0.6.2** corrige las opciones de calidad, el avance y retroceso del video y los nombres de las pistas de audio. Calidad y Chromecast comparten la barra de controles. Se comprobó reproducción real en 1080p y cambio a 720p conservando posición y pausa. [Registro de cambios y validación](CHANGELOG.md).
+
+**0.6.0** incorpora Chromecast dentro de la aplicación, con selección de receptor, controles del envío e idiomas.
+
 **0.5.0** muestra primero las plataformas y las categorías de 2026, separadas para películas y series. Incluye accesos a Netflix, Disney+, Prime Video, HBO, Apple TV+, Hulu y Paramount+ según las categorías del servicio. También incorpora fondo panorámico con difusión y transición suave, ajustes para ventanas pequeñas y pantallas anchas, compartir y actualizador integrado. Incluye filtros por tipo, género, año, país, idioma de audio y puntaje mínimo, caché persistente de imágenes y desplazamiento animado de filas.
 
 La disponibilidad de títulos, idiomas y calidades depende del servicio de origen. La aplicación no incluye archivos de películas o series.
@@ -32,4 +36,4 @@ La disponibilidad de títulos, idiomas y calidades depende del servicio de orige
 
 El paquete incluye avisos y licencias de las dependencias en `THIRD-PARTY-NOTICES.txt` y `licenses`. VLC/libVLC se distribuye sin modificar, con licencias LGPL/GPL según el componente; sus fuentes oficiales están disponibles en [VideoLAN](https://www.videolan.org/vlc/download-sources.html).
 
-Este repositorio contiene las versiones de distribución y su documentación. No incluye datos personales, sesiones, capturas ni informes locales de diagnóstico.
+Este repositorio contiene el código de la aplicación, versiones de distribución, documentación y resultados técnicos seleccionados. [Compilación y pruebas](docs/BUILDING.md). La configuración privada del servicio, los datos personales, las sesiones, las capturas y los registros locales completos quedan excluidos.

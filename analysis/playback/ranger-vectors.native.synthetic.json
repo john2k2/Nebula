@@ -1,0 +1,132 @@
+{
+  "provenance": "Unicorn 2.1.4 executing original ARM64 codec instructions from statically decompressed image; synthetic inputs only. Memory/C++ strings hooked locally; crypto and JsonCpp unhooked.",
+  "vectors": [
+    {
+      "version": 11,
+      "direction": "request",
+      "communication_key": "offline-synthetic-communication-key",
+      "plaintext": "[{\"auth\":\"https://auth.example.invalid/?app_id=demo&tag=sample\",\"license\":\"app_id=demo&tag=sample&ticket=synthetic\",\"media_code\":\"fake-media-001\"}]\n",
+      "key_hex": "da4a6fac25fdadd2cfafd5e4e7b52fc9",
+      "iv_hex": "5c82c4cf6f6c269c7682a232ef66d054",
+      "ciphertext_hex": "1106bb0b6b23e0107b26e1437c7b8b3a59136e67799d0159755d25289ab12d01f07837b213ca45347910b92c660d7184a1ea03092630425e0580dc281cd3333d60acf37adbc0232ab6c6a1799e46311d14d8a8f41ab2dd9bbc7d044603d9ae2589d7b0dded5c3a1f5cf1a3a765d44b866678d2509cba928fba2bf6e73f31be4d356d0073778138caf79c4b2dcb0c74478a91d541e119ab2fb7faa6c0a77eab31",
+      "encoded": "YcpKBNP2dWWK9Gt7a3GXk-M1QeOHfctTOx5-i9LuXc36I7IyYzgtE3McGlue74CYAIA7BlS6c-dtRE6A3EbDUFBPzswQ6BbLqPpmITHCbJ5VNi25CwXOeKu0WYS7Npd-hOI6sIvokm0ozpkfTOJXmeTd5-BoGgiUGhrNHDzurM5vQcWDOdYdyrIolysX73J3hg3xcIYTLyZsZLQjgs_wbc",
+      "full_wrapper_verified": true
+    },
+    {
+      "version": 11,
+      "direction": "response",
+      "communication_key": "offline-synthetic-communication-key",
+      "plaintext": "{\"play_infos\":[{\"status_code\":200,\"media_code\":\"fake-media-001\",\"metadata\":\"{\\\"name\\\":\\\"Synthetic sample\\\"}\",\"servers\":[{\"tag\":\"sample\",\"server_code\":\"fake-server\",\"media_url\":\"https://media.example.invalid/sample.mp4\",\"idx_url\":\"\",\"snapshot_url\":\"\",\"torrent_url\":\"\"}],\"cast_servers\":[]}]}",
+      "key_hex": "da4a6fac25fdadd2cfafd5e4e7b52fc9",
+      "iv_hex": "1a00998ba5ec22306cd65dd4284d431e",
+      "ciphertext_hex": "340c6cc9a908a91c367ee725761b71e58f5e92b1fbd2b2e37dbe307f1b52d74c9ee83cf0b84cf003f1f963caef16aab5144afbb6d1578da2d65c5c038e5dc451c097916f787155486682a1fb5777dc18b8ad8dfe65acecc2a74564f8f2de3d0f628686da422bc141fa2458240eeabd31ea65d10581f8e522e23ed856dbb2c2f5b727f88c3f0421a706ec0657b74a91018133e3a23691510331758d06550e030598e599e63b85735026b2bf6f3b9d1e574ab5fb44a8570c3c183665da2a056f6b9ddfca15f3d5a800cb5ad9e1f47956a9ade7fcb62c756ee296a152e26091970744608cbc4b437b47ee4bb30e2576df6ce1a57fe3e671491509b00d52f48747aab1e0cc11d7615478ed775fcb04357cca958c42b9fc9a46c82f178874462a3ad1bcf1c46f44ff900eb56d087d61caf552",
+      "encoded": "EjuPypMnLJ6NaGo-OmquHS0IMw3K5wX2aQd6auqlv5yI_7D6GYD6j83HSzwrtLLvtYwKqqt42pXF4t672-sYVoB4MF0doxxnTAimZvOssWhdwSsZTpDP6LOtTU2ys25USApCNMnw6V3_9tRM7GL0bIg-5cFWZkVhd2KSxqGy6rFs98hbU6cmg6QPW-IslgYWR1U2A2pJVcbuOS5Cxcd7WT2-eISKm4Ec9wi8QDGO3-OiqaqYLtobUWRNTOALWF0wfO8itaUxLj7XFqfm03-FLpsf8XSPOFKh-LtldeBJ-6OYSnyzl5EKJZHXP6d-Oq0Pdpx8dZTulJV9Pjvl0nO3Lw3RDW34SxJdK4Oay6cvabLx2YiH89gCyBz4h3JCi2wJrU3YQ518Mj_vQcm0SowvVR"
+    },
+    {
+      "version": 9,
+      "direction": "request",
+      "communication_key": "offline-synthetic-communication-key",
+      "plaintext": "https://auth.example.invalid/?app_id=demo&tag=sample",
+      "key_hex": "6c996a538f82ba732a0c1eba81837a5b",
+      "iv_hex": "b0f400e1f93edfd419b6a308a0ed8d2d",
+      "ciphertext_hex": "1579fbcc7601888deb8af71cb587935f6bd9b285ea6c18dfb2467e7192d1e5ad8bb9ee35ac4fcc763f10ceebe7c9889a47b4a8871c4f14109fcc10bec9450f25",
+      "encoded": "t4fKD3SWhnswhrooqSI14NrTPA4LQW2aPMTZoTXJHpNXGIdvwY8bO2zcDGrfyShpJKlAmuuUtWBaDWBZyVVU9c",
+      "full_wrapper_verified": true
+    },
+    {
+      "version": 9,
+      "direction": "response",
+      "communication_key": "offline-synthetic-communication-key",
+      "plaintext": "{\"servers\":[{\"tag\":\"sample\",\"server_code\":\"fake-live\",\"media_url\":\"https://media.example.invalid/live/\"}],\"cast_servers\":[]}",
+      "key_hex": "6c996a538f82ba732a0c1eba81837a5b",
+      "iv_hex": "a2f7498ac0c1b3f58cea374e17d11824",
+      "ciphertext_hex": "c791884b493edf45bf3af56ffdb55a4d49e250f4299563aeb7bf2b7a49bf3d2e9966a3b959a5bebb06f89cf22fb78967744a7e7231d4749fb5d50b5452484663fadaf651d1d06251538e2610e18582f69b9ded12fe3c8bac5e6559d8cb70744b1bd1aa42e88a88f7ef3ecaef6171bbe21f017ef650aada4288d230854bf3411b",
+      "encoded": "uHCnl5MZs5F8krxr8Qxp1VfhVUcg-FkGqKzwIMe8Ul_TTLkHFpFZG6QdfUnrqd-fOYgZo23VO9ZvvcqVVMmCS8wp0-3J5C9JVddeYkCtRrpQfI5l82yXwtH-FO2Xo3JXC0CLcGhihUarUPwrS4CKdmzWarTcLqgBhEn6mVrDcJP"
+    },
+    {
+      "version": 11,
+      "direction": "request",
+      "communication_key": "offline-synthetic-communication-key",
+      "plaintext": "1234567890abcdef",
+      "key_hex": "da4a6fac25fdadd2cfafd5e4e7b52fc9",
+      "iv_hex": "5c82c4cf6f6c269c7682a232ef66d054",
+      "ciphertext_hex": "1e7155d4778e5c98cbe30808312e7ce1b8839e45dff7c2bfe896211ba3d1b1d2",
+      "encoded": "3ftxv3Ik492Xd6RnblHzdQh7fM4a0zi8_9SmC_UJPOn"
+    },
+    {
+      "version": 11,
+      "direction": "request",
+      "communication_key": "offline-synthetic-communication-key",
+      "plaintext": "[{\"auth\":\"\u00e1\u03b2\",\"license\":\"fake\",\"media_code\":\"offline\"}]\n",
+      "key_hex": "da4a6fac25fdadd2cfafd5e4e7b52fc9",
+      "iv_hex": "5c82c4cf6f6c269c7682a232ef66d054",
+      "ciphertext_hex": "40fafd506732f70cfac2786ba837dd0426c83f2d26f2e7930701ff7ce6daecb8d21b073f81627c1350137379e1c7b0ac77ea19a27014f0b305ec56c612578b2f",
+      "encoded": "cUw0VCoy06D_6fmwL7aOWBQnUy5ezGI1W638akQpKX2lC6o8RF9zYvj1osfmuKBPOZATAfjVzXbtKtQCY-IXX6",
+      "full_wrapper_verified": true
+    }
+  ],
+  "native_md5": [
+    {
+      "message_hex": "",
+      "digest_hex": "788eb771bc499f0bc7f00fdb08c397aa"
+    },
+    {
+      "message_hex": "61",
+      "digest_hex": "a310a32e2117a9c96ff97333083660cc"
+    },
+    {
+      "message_hex": "616263",
+      "digest_hex": "1391f058d231d7608e5ce9194d0b8d25"
+    },
+    {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "digest_hex": "0ea35a8ab9d96a09b7dc63e71ffce249"
+    },
+    {
+      "message_hex": "6161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161",
+      "digest_hex": "8d5fcd79838b62ed688ed6af5f7f1860"
+    },
+    {
+      "message_hex": "5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a",
+      "digest_hex": "d782d3f1860a7329adfba14d1961e3a2"
+    },
+    {
+      "message_hex": "5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a",
+      "digest_hex": "6998cdc1c7b608464d690597bca34565"
+    },
+    {
+      "message_hex": "5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a",
+      "digest_hex": "76adf4acec6834ced1ede137b5185018"
+    },
+    {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfe",
+      "digest_hex": "936a99139bfa6e840e0894566a4dc149"
+    }
+  ],
+  "content_auth": [
+    {
+      "auth": "/asset.mp4",
+      "instance": 0,
+      "start_moment_ms": 1800000000123,
+      "signed": "/asset.mp4"
+    },
+    {
+      "auth": "/asset.mp4?token=",
+      "instance": 0,
+      "start_moment_ms": 1800000000123,
+      "signed": "/asset.mp4?token="
+    },
+    {
+      "auth": "/asset.mp4?token=fake-offline-ticket",
+      "instance": 0,
+      "start_moment_ms": 1800000000123,
+      "signed": "/asset.mp4?token=fake-offline-ticket&sign2_method=sign_o3&instance=0&start_moment=1800000000123&sign2=9a4c5a9d651eca28fefe60eb7c64263a"
+    },
+    {
+      "auth": "/asset.mp4?x=1&token=fake%2Bticket&after=retained",
+      "instance": 0,
+      "start_moment_ms": 1800000000123,
+      "signed": "/asset.mp4?x=1&token=fake%2Bticket&after=retained&sign2_method=sign_o3&instance=0&start_moment=1800000000123&sign2=6fc883d0e875f5069930ef647b5ebda0"
+    }
+  ]
+}
